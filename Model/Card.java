@@ -1,27 +1,44 @@
 package Model;
 
+
+import java.util.Objects;
+
 public class Card {
-    //La baraja son los coches.
-    private int valor;
+    private int value;
+    private String suit;
 
-    private String palo;
-    public Car(int valor, String palo){
-        this.valor= valor;
-        this.palo= palo;
+    public Card(int value, String suit) {
+        this.value = value;
+        this.suit = suit;
     }
-    public Card(){ this(1,"");
+    public Card(){
+        this(0,"");
     }
-
-    public int getValor() {
-        return valor;
+    public int getValue() {
+        return value;
     }
-
-    public String getPalo() {
-        return palo;
+    public void setValue(int value) {
+        this.value = value;
     }
-
+    public String getSuit() {
+        return suit;
+    }
+    public void setSuit(String suit) {
+        this.suit = suit;
+    }
     @Override
     public String toString() {
-        return super.toString();
+        return "Card{" +
+                "value=" + value +
+                ", suit='" + suit + '\'' +
+                '}';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return value == card.value && Objects.equals(suit, card.suit);
+    }
+
 }
