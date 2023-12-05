@@ -9,7 +9,7 @@ public class Deck {
 
     private static String [] suit = new String[] {"Corazones,Diamantes,Tréboles,Picas"};
 
-    public Deck(int [] Card){
+    public Deck(){
     int numeroCartas=0;
      for (int i = 1; i <= 13; i++) {
         // Añadir cada número cuatro veces a la baraja
@@ -23,6 +23,14 @@ public class Deck {
         newDeck[numeroCartas]= new Card(i, "Tréboles");
         numeroCartas++;
         }
+    }
+
+    @Override
+    public String toString() {
+        for (int i= 1;i<= newDeck.length;i++){
+            System.out.println(newDeck[i]);
+        }
+        return super.toString();
     }
 
     /*
