@@ -28,7 +28,7 @@ public class Deck {
         deck[numeroCartas]= new Card(i, "Tréboles");
         numeroCartas++;
         }
-     mezclar(); //Las baraja despues de crearlas.
+      //Las baraja despues de crearlas.
     }
 
     @Override
@@ -40,16 +40,13 @@ public class Deck {
     }
 
 
-    private void mezclar() {
-        //La clase Collections es la que nos dara el metodo empleado
-        Collections.shuffle(List.of(deck));
-    }
+
 
     public static Card[] getDeck() {
         if (numeroCartas==51){
             System.out.println("No hay que repartir más cartas");
             return null;
         }
-        return null;
+        return deck;
     }
 }
