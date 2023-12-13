@@ -78,7 +78,9 @@ public class Game {
         System.out.println("Jugador: " + playerValue);
         System.out.println("Dealer: " + dealerValue);
 
-        if (playerValue > 21) {
+        if (playerValue > 21 && dealerValue > 21) {
+            System.out.println("Ambos jugadores se han pasado de 21. ¡Es un empate!");
+        } else if (playerValue > 21) {
             System.out.println("Te has pasado de 21. ¡Pierdes!");
         } else if (dealerValue > 21) {
             System.out.println("El dealer se ha pasado de 21. ¡Ganas!");
