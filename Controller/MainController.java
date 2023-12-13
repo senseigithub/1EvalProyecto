@@ -1,44 +1,51 @@
 package Controller;
 
+import Model.*;
+
 import View.Menu;
 
 import java.util.Scanner;
 
 public class MainController {
-    Menu menu= new Menu();
-    int opcion=valid();
+    private Menu menu = new Menu();
+    private Game game = new Game();
 
-    public void run(){
-        menu.mainMenu();
+    public static void main(String[] args) {
+        MainController controller = new MainController();
+        controller.run();
     }
 
-    public int valid(){
-        //Este metodo va a validar las opciones introducidas por el usuario
+    public void run() {
+        menu.mainMenu();
+        int opcion = valid();
+        chooseOpcion(opcion);
+    }
+
+    public int valid() {
         Scanner teclado = new Scanner(System.in);
-        int opcion=teclado.nextInt();
-        boolean valid = true;
+        int opcion;
 
         do {
             try {
+                System.out.print("Introduce una opción: ");
                 opcion = teclado.nextInt();
-                valid = false;
-            } catch (Exception e){
-                System.out.println("Pon los valores correctamente");
-                teclado.nextLine();
+            } catch (Exception e) {
+                System.out.println("Por favor, introduce un valor válido.");
+                teclado.nextLine(); // Limpiar el buffer del scanner
+                opcion = 0; // Establecer un valor por defecto para evitar un bucle infinito
             }
+        } while (opcion < 1 || opcion > 2);
 
-        } while (opcion<1 || opcion>4);
         return opcion;
     }
 
-    public void chooseOpcion(int opcion){
-        //Este metodo va a recibir la opcion validada para hacer el switch
-        switch (opcion){
+    public void chooseOpcion(int opcion) {
+        switch (opcion) {
             case 1:
-
+                game.run();
                 break;
             case 2:
-
+                // Agrega el código correspondiente para la opción 2
                 break;
         }
     }
