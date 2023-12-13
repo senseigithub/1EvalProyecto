@@ -80,7 +80,8 @@ public class Card {
             break;
     }
 
-    return  "┌───────┐\n" +
+    return
+            "┌───────┐\n" +
             "| " + cardValue + "     |\n" +
             "|       |\n" +
             "|   " + suitSymbol + "   |\n" +
