@@ -29,7 +29,7 @@ public class Card {
 
     public boolean isAce() {
         //Este metodo
-        return value == 1;  // Se asume que el valor de un As es 1
+        return value == 1;  //Valora si es un AS o no.
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Card {
                 cardValue = String.valueOf(value);
                 break;
         }
-
+    //Lo unico que hace es pasar el String del palo a un simbolo, para que sea mas estetico.
     String suitSymbol;
         switch (suit) {
         case "Corazones":
