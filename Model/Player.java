@@ -100,17 +100,6 @@ public class Player {
         return value;
     }
 
-    public boolean isAce() {
-        // Este método indica si hay al menos un AS en la mano del jugador.
-        // El valor de un AS es 11 cuando el valor total de la mano del jugador es menor a 11.
-
-        for (int i = 0; i < numCards; i++) {
-            if (hand[i] != null && hand[i].isAce() && getHandValue() < 11) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public boolean isDealer() {
         return isDealer;

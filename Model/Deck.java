@@ -43,14 +43,6 @@ public class Deck {
     }
 
 
-    public static Card[] getDeck() {
-        if (numeroCartas==51){
-            System.out.println("No hay que repartir más cartas");
-            return null;
-        }
-        return deck;
-    }
-
     public Card drawCard() {
         if (numeroCartas > 0) {
             numeroCartas--;
